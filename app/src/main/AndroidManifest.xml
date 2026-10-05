@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- \uD83C\uDF10 Internet for ML Kit model download -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.HelakuruProMax"
+        android:supportsRtl="false"
+        tools:targetApi="31">
+
+        <!-- ⌨️ CORE: Keyboard Service -->
+        <service
+            android:name=".SinhalaKeyboardService"
+            android:label="@string/keyboard_label"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <!-- Settings Activity -->
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HelakuruProMax">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

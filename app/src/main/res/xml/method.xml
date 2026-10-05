@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<input-method xmlns:android="http://schemas.android.com/apk/res/android"
+    android:settingsActivity="com.helakuru.promax.ui.SettingsActivity"
+    android:icon="@drawable/ic_launcher">
+
+    <!-- සිංහල -->
+    <subtype
+        android:imeSubtypeMode="keyboard"
+        android:imeSubtypeLocale="si_LK"
+        android:imeSubtypeExtraValue="TrySuppressingImeSwitcher,AsciiCapable"
+        android:label="@string/subtype_si" />
+
+    <!-- English -->
+    <subtype
+        android:imeSubtypeMode="keyboard"
+        android:imeSubtypeLocale="en_US"
+        android:label="@string/subtype_en" />
+
+</input-method>
